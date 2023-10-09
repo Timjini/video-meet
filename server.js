@@ -11,6 +11,7 @@ const peerServer = ExpressPeerServer(server, { // Here we are actually defining 
 const path = require("path");
 
 app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views')); // Update this line if necessary
 app.use("/public", express.static(path.join(__dirname, "public")));
 app.use("/peerjs", peerServer); // Now we just need to tell our application to server our server at "/peerjs".Now our server is up and running
 
