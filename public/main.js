@@ -19,6 +19,10 @@ var peer = new Peer(undefined, { // Now with our peer server up an running, let'
     port: "3030",
 });
 
+socket.on("connect_error", (error) => {
+    console.error("Connection error:", error.message);
+  });
+
 let myVideoStream;
 const peers = {};
 var getUserMedia =
